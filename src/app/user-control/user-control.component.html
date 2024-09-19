@@ -1,0 +1,14 @@
+<div class="user-controller">
+    <h2>User Management</h2>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <h3 (click)="token()">User Profile</h3>
+    <div *ngIf="userProfile">
+      <p>Username: {{ userProfile.username }}</p>
+      <p>Email: {{ userProfile.email }}</p>
+      <p>Admin: {{ userProfile.admin }}</p>
+    </div>
+  </div>
+  

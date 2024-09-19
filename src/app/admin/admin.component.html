@@ -1,0 +1,117 @@
+  <app-user></app-user>
+  <div class="Title">
+    <p>Manage Quiz and Questions</p>
+  </div>
+  <div class="container">
+    <div class="Create">
+      <div class="quiz-form">
+        <div class="input">
+          <label for="quiz-title">Title</label>
+          <div class="title">
+            <input id="quiz-title" [(ngModel)]="Quiz.title" type="text" placeholder="Enter quiz title">
+          </div>
+          <label for="quiz-description">Description</label>
+          <div class="description">
+            <textarea id="quiz-description" [(ngModel)]="Quiz.description" placeholder="Enter quiz description"></textarea>
+          </div><br>
+          <button class="button" (click)="addTitle()">Create Quiz</button>
+        </div>
+      </div>
+    
+      <div class="question-form">
+        <div class="form">
+          <label for="quizId">Select Quiz:</label>
+          <div class="titleC">
+            <select name="quizId" id="QuizId" class="QuizId" [(ngModel)]="quizId" aria-placeholder="choose title">
+              <option *ngFor="let quiz of quizzes" [value]="quiz.id">{{ quiz.title }}</option>
+            </select>
+          </div>
+          <label for="question-text">Question Text:</label>
+          <div class="question">
+            <textarea id="question-text" [(ngModel)]="questions.question_text" placeholder="Enter question text"></textarea>
+          </div>
+  
+          <div class="options">
+            <h4>Options</h4>
+            <button class="add" type="button" (click)="addOption()">Add Option</button>
+            <div *ngIf="message" class="alert alert-warning">
+              {{ message }}
+            </div>
+            <div  *ngFor="let option of questions.options; let i = index" class="option-item">
+              <br>
+              <div class="search">
+                <div class="search-box">
+                  <div class="search-field AOption">
+                    <input class="input" class="box" [(ngModel)]="option.option_text" placeholder="Option text">
+                    <div class="search-box-icon">
+                      <button class="btn-icon-content">
+                        <input class="checkbox" [(ngModel)]="option.is_correct" name="admin" checked="checked" type="checkbox">
+                      </button>
+                      <button class="add" type="button" (click)="removeOption(i)" [disabled]="questions.options.length === 1">Remove</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            
+            </div>
+          </div>
+          <br><br>
+          <button class=" button" (click)="postQuestions()">Add Questions</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="manage">
+      <div class="quiz-actions">
+        <h3>Manage Quizzes</h3>
+        <div *ngIf="!quizzes.length">No quizzes available</div>
+        <div *ngIf="quizzes.length > 0">
+          <div class="QUIZ" *ngFor="let quiz of quizzes; let i = index">
+            <div class="GTitle">
+              <div>
+                <h5></h5>
+                <h4>{{ i + 1 }}.&ensp;{{quiz.title}}</h4>
+                <h6>{{quiz.description}}</h6>
+                <button class="delete" (click)="deleteQuiz(quiz.id)">
+                  <p>Delete Quiz</p>
+                </button> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <br><br>
+      <div class="questions">
+        <div>
+          <h3>Manage Questions</h3>
+        <div *ngIf="QuestionList.length > 0">
+          <br>
+          <div class="questionBoxG"*ngFor="let question of QuestionList; let i = index">
+            <h4 class="questionG">
+              {{ i + 1 }}. {{ question.question_text }}
+            </h4>
+            <br>
+            <div class="OptionBox">
+              <div  class="OptionG">
+                <div class="titleC">
+                    <select name="quizId" id="QuestionsId" class="QuizId"  aria-placeholder="questions">
+                      <option *ngFor="let option of question.Options" >{{ option.option_text}}</option>
+                    </select>
+                  </div>    
+                <br>
+              </div>
+            </div>
+            <br>
+            <button class="delete" (click)="deleteQuestions(question.id)">
+              <p>Delete</p>
+            </button>
+          </div>
+        </div>
+    </div>
+  </div><br><br><br>
+  <div class="logout"><button class="logoutB" (click)="LogOut()"><p>Logout</p></button></div>
+
+
+

@@ -1,0 +1,237 @@
+body{
+    background-color:var(--color3--);
+    align-items: center;
+    justify-content: center;
+}
+.nav{
+    background-color:var(--color3--);
+    border:1px solid black;
+    height: 125px;
+    margin-bottom: 20vh ;
+    color: var(--color1--);
+    
+}
+.container {
+    background-color:var(--color4--);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    margin-bottom: 80px;
+    margin-left: 5%;
+    margin-right: 10%;
+    border: 1px solid black;
+    border-radius: 0.7vh;
+    height: 80vh;
+    overflow: hidden; 
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    -webkit-animation: scale-out-ver-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
+	        animation: scale-out-ver-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
+}
+
+
+.title{
+    color: black, #fff;
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    -webkit-animation: flicker-in-1 3s linear both;
+	animation: flicker-in-1 3s linear both;
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+	    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+.title h1{
+    color: black;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    animation:  1s ease-in-out infinite alternate;
+    /* text-shadow:0 0 1px var(--color3--),
+    0 0 20px var(--color5--),
+    0 0 40px var(--color5--),
+    0 0 80px var(--color5--), */
+}
+
+
+.title h2{
+    color: black;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    position: relative;
+    top: -20px;
+    left: 30px;
+    animation:  0.8s ease-in-out infinite alternate;
+
+}
+.userName{
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    margin-left: 85%;
+    position: relative;
+    bottom: 76%;
+}
+.question{
+    font-size:45px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.Option{
+    text-align: center;
+}
+.Option.selected {
+    margin: auto;
+    width:auto+1px;
+    color:var(--color4--);
+    border-radius: 0.8vh;
+    background-color: var(--color2--);
+    border: 1px solid #000;
+}
+
+.questionBox {
+    /* border: 1px solid black; */
+    width: 95vh;
+    height: 70vh;
+    position: relative;
+}
+.point{
+    border: 1px solid black;
+    border-radius:0.7vh ;
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    margin-left: 83%;
+    margin-right: 17%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    background-color:var(--color2--);
+}
+.point h1{
+    bottom: 10px;
+    position: relative;
+}
+.point h2{
+    bottom: 10%;
+    position: relative;
+    margin-top: 10PX;
+}
+.point > div{
+    margin-top: 20px;
+}
+
+.OptionBox{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+.next{
+    text-align: center;
+    margin-left: 85%;
+    margin-top: 10px;
+    height: 25px;
+    /* margin: auto; */
+    color: var(--color1--);
+    border-radius: 0.8vh;
+    background-color:var(--colo6--);
+    border: 1px solid #000;
+}
+.submit{
+    width: 100px;
+    border-radius: 0.8vh;
+    background-color: var(--color2--);
+    font-size: 30px;
+    justify-content: center;
+    display: flex;
+    margin-left: 44%;
+}
+body>div{
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.div{
+    justify-content: center;
+    align-items: center;
+}
+.score{
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    background-color: var(--color2--);
+    width: 400px;
+    height: 140px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.score > div{
+    margin: 10px;
+    margin-top: 10px;
+}
+.score > div > a{
+    text-decoration: none;
+    color: #000;
+    border: #000 solid 1px;
+    background-color: var(--color3--);
+}
+
+
+
+.box{ 
+    margin: 40px;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #676767;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+}
+/* 
+@keyframes animate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+.box::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(#ff0000, #6600ff, #0000ff);
+    height: 990%;
+    width: 130Px;
+    align-items: center;
+    animation: animate 4s  linear infinite both;
+    border-radius: 20px;
+
+}
+
+.box::after {
+    content: '';
+    margin: 1px;
+    height: 98%;
+    position: absolute;
+    background: rgb(70, 69, 69);
+    inset: 4px;
+    border-radius: 20px;
+
+} */

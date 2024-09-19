@@ -1,0 +1,49 @@
+
+
+<app-user></app-user>
+  <div class="nav">
+    <div (click)="goto()" class="title">
+      <h1 >{{ quizById.title }}</h1>
+      <h2>{{ quizById.description }}</h2>
+    </div>
+    <div class="userName">
+      <h1></h1>
+    </div>
+  </div>
+  
+  <div class="container " @fadeIn *ngIf="!isQuizCompleted">
+    <div class="questionBox" *ngIf="quizById?.Questions && currentQuestionIndex >= 0">
+      <div class="point">
+        <h1>{{ currentQuestionIndex + 1 }}/{{ quizById.Questions.length }}</h1>
+        <h2>Score: {{ score }}</h2>
+      </div><br><br>
+  
+      <h1 class="question" [@slideInOut]="'in'">{{ quizById.Questions[currentQuestionIndex]?.question_text }}</h1>
+  <br><br>
+      <div class="OptionBox">
+        <h2  class="Option" 
+            *ngFor="let option of quizById.Questions[currentQuestionIndex]?.Options"
+            (click)="selectOption(option);"
+            [class.selected]="selectedOption === option">
+          {{ option.option_text }}
+        </h2>
+      </div>
+  
+      <div class="submit  btn" *ngIf="selectedOption" (click)="next()">Submit</div>
+    </div>
+  </div>
+  <div class="div">
+    <div class="score" *ngIf="isQuizCompleted">
+      <div>
+        <h1>Quiz Completed!</h1>
+        <h2>Your final score is: {{ score }}/{{ quizById.Questions.length }}</h2>
+        <a href="/home">Go back to home </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div class="body" >
+    <div class="box">
+      <h2>css</h2>
+    </div>
+  </div> -->

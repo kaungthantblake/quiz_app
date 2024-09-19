@@ -1,0 +1,65 @@
+
+.sidebar {
+    width: 30%;             
+    height: 40%;           
+    border-radius: 5px;      
+    padding: 15px;          
+    text-align: center;      
+    position: fixed;         
+    top: 10%;                
+    right: -98%;            
+    transition: right 0.8s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;       
+    z-index: 1000;
+    -webkit-animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
+	        animation: text-blur-out 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
+  }
+  
+  .sidebar.active {
+    right: 0; 
+  }
+  .cart-toggle {
+    cursor: pointer;            
+    position: fixed;            
+    top: 19%;                  
+    right: 20px;                
+    z-index: 1001;             
+    background-color: lightblue; 
+    padding: 10px;              
+    border-radius: 50%;        
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back{
+    background-color: var(--color3--);
+    position: relative;
+    border-radius: 0.8vh;
+    left: -45%;
+  }
+  .icon{
+    width: 30px;
+    height: 30px;
+  }
+  .logout{
+    background-color: var(--color3--);
+    border-radius: 0.8vh;
+  }
+  .logout:hover{
+    background-color: var(--color3--);
+    color: red;
+  }
+  .info{
+    text-align: center;
+    border: 1.5px solid var(--color1--);
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px ;
+    transition: 0.2s ease-in-out;
+    background-color:var(--color2--) ;
+  }
+  .Name>P{
+
+  }

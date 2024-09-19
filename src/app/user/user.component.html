@@ -1,0 +1,45 @@
+<div *ngIf="!isCartOpen" class="cart-toggle" (click)="toggleCart()">
+    <svg class="icon" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path fill-rule="evenodd"
+            d="M7 2a2 2 0 0 0-2 2v1a1 1 0 0 0 0 2v1a1 1 0 0 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a1 1 0 1 0 0 2v1a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm3 8a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm-1 7a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3 1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1Z"
+            clip-rule="evenodd" />
+    </svg>
+
+</div>
+
+<div class="container">
+
+    <div class="sidebar" [ngClass]="{'active': isCartOpen}">
+        <button class="back" (click)="toggleCart()">back</button>
+
+        <div class="user-controller">
+            <div *ngIf="userProfile">
+
+                <h1></h1>
+
+                <div class="info Name">
+                    <p for="p">Username:&emsp;</p>
+                    <p>{{ userProfile.username }}</p>
+                </div>
+
+                <div class=" info Email">
+                    <p for="p">Email Address:&emsp;</p>
+                    <p> {{ userProfile.email }}</p>
+                </div>
+
+                <div class="info Admin">
+                    <p for="p">Role:&emsp;</p>
+                    <p *ngIf="userProfile.admin !== true">User</p>
+                    <p *ngIf="userProfile.admin == true">Admin</p>
+                </div>
+            </div>
+            <div *ngIf="!userProfile">
+                <P>Please login first</P>
+                <a href="/login">Login</a>
+            </div>
+            <button class="logout" (click)="logout()">logout</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+<app-user></app-user>
+<div class="Title">
+  <p>Choose a Quiz to answer</p>
+</div>
+<br>
+<div class="quiz-list">
+    <div class="Quiz" *ngFor="let quiz of quizzes" (click)="selectQuiz(quiz.id)">
+      <div>
+        <h2>{{ quiz.title }}</h2>
+      <p>{{ quiz.description }}</p>
+      </div>
+    </div>
+  </div>
+  

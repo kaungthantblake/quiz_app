@@ -1,0 +1,43 @@
+
+.quiz-list{
+    border: #000 solid 1px; 
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background-color: var(--color3--);
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    border-radius: 0.8vh;
+    width:95% ;
+    height: auto;
+    margin-right: 10%;
+}
+
+.Quiz{
+    margin: 20px;
+    background-color: var(--color2--);
+    align-items: center;
+}
+.Quiz > div{
+    text-align: center;
+    margin: 10px;
+}
+.Title {
+    background: linear-gradient(to right, var(--color5--), var(--color4--), rgb(70, 70, 239));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: color-change 4s linear infinite alternate both;
+    animation: color-change 4s linear infinite alternate both;
+    background-size: 200%; /* Adjust background size to create movement effect */
+}
+
+.Title > p {
+    font-weight: 400;
+    font-size: 80px;
+    align-items: center;
+    text-align: center;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
